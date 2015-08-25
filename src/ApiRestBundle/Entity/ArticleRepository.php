@@ -15,7 +15,7 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
         $conn = $this->_em->getConnection();
         $sql = 'DELETE FROM Article WHERE slug = :id;';
         $statement = $conn->executeQuery($sql, array('id' => $id));
-        $game = $this->_em->getReference('ApiRestBundle:Article', $id);
+        $article = $this->_em->getReference('ApiRestBundle:Article', $id);
         $result = $statement->rowCount();
         return $result;
     }

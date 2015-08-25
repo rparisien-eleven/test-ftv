@@ -38,7 +38,7 @@ class ArticleController extends FOSRestController
      * @Rest\View(serializerGroups={"get_article"})
      * @ParamConverter("article", class="ApiRestBundle:Article", options={"mapping": {"id": "slug"}})
      *
-     * @param Article $article The game object gotten via DoctrineParamConverter
+     * @param Article $article The article object gotten via DoctrineParamConverter
      *
      * @return array
      *
