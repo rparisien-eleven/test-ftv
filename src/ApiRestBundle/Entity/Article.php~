@@ -1,0 +1,115 @@
+<?php
+
+namespace ApiRestBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
+use JMS\Serializer\Annotation\Exclude;
+use JMS\Serializer\Annotation\Groups;
+use JMS\Serializer\Annotation\VirtualProperty;
+
+/**
+ * Article
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="ApiRestBundle\Entity\ArticleRepository")
+ *
+ */
+class Article
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     *
+     * @Exclude
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="title", type="string", length=100)
+     *
+     * @Groups({"list_articles"})
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = "1",
+     *      max = "255",
+     *      minMessage = "L'accroche doit être au minimum de {{ limit }} caracteres",
+     *      maxMessage = "L'accroche doit être au maximum de {{ limit }} caracteres"
+     * )
+     * @ORM\Column(name="leading", type="string")
+     *
+     * @Groups({"list_articles"})
+     */
+    private $leading;
+
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = "1",
+     *      max = "255",
+     *      minMessage = "Le corps doit être au minimum de {{ limit }} caracteres",
+     *      maxMessage = "Le corps doit être au maximum de {{ limit }} caracteres"
+     * )
+     * @ORM\Column(name="body", type="string", length=2048)
+     *
+     * @Groups({"list_articles"})
+     */
+    private $body;
+
+    /**
+     * @var \DateTime
+     *
+     * @Assert\DateTime()
+     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     *
+     * @Groups({"list_articles"})
+     */
+    private $createdAt;
+
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = "1",
+     *      max = "255",
+     *      minMessage = "L'auteur doit être au minimum de {{ limit }} caracteres",
+     *      maxMessage = "L'auteur doit être au maximum de {{ limit }} caracteres"
+     * )
+     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     *
+     * @Groups({"list_articles"})
+     */
+    private $slug;
+
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = "1",
+     *      max = "50",
+     *      minMessage = "L'auteur doit être au minimum de {{ limit }} caracteres",
+     *      maxMessage = "L'auteur doit être au maximum de {{ limit }} caracteres"
+     * )
+     * @ORM\Column(name="created_by", type="string", length=50)
+     *
+     * @Groups({"list_articles"})
+     */
+    private $createdBy;
+}

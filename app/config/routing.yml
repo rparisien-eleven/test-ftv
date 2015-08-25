@@ -1,0 +1,12 @@
+front:
+    resource: "@FrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+#api_rest:
+#    resource: "@ApiRestBundle/Resources/config/routing.yml"
+#    prefix:   /
+#
+rest :
+  type : rest
+  resource : "routing_rest.yml"
+  prefix : /

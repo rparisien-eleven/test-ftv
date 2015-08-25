@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>Liste des articles:</h1>
+    <div><a href="{{ path('front_new') }}" >Ajouter un article</a></div>
+    {%  for article in articles %}
+        <div>
+            {{ article.title }} [par {{ article.created_by }} le {{ article.created_at }}]
+        </div>
+        <div>{% if article.leading is defined %}{{ article.leading }}{% endif %}</div>
+        <div><a href="{{ path('front_get', {'slug': article.slug }) }}">Lire la suite</a><hr></div>
+    {% endfor %}
+{% endblock %}

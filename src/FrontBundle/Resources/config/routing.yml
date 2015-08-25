@@ -1,0 +1,23 @@
+front_list:
+    path:     /
+    defaults: { _controller: FrontBundle:Default:list }
+
+front_new:
+    path:     /creer
+    defaults: { _controller: FrontBundle:Default:new }
+    requirements:
+        _method:  GET
+
+front_create:
+    path:     /creer/article
+    defaults: { _controller: FrontBundle:Default:create }
+    requirements:
+        _method:  POST
+
+front_get:
+    path:     /article/{slug}
+    defaults: { _controller: FrontBundle:Default:get }
+
+front_delete:
+    path:     /article/delete/{slug}
+    defaults: { _controller: FrontBundle:Default:delete }

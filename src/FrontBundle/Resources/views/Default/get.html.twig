@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>{{ article.title }}</h1>
+    <div>Par {{ article.created_by }} le {{ article.created_at }}</div>
+    <div>{% if article.leading is defined %}{{ article.leading }}{% endif %}</div>
+    <div>{% if article.body is defined %}{{ article.body }}{% endif %}</div>
+    <div><a href="{{ path('front_list') }}">Liste des articles</a></div><div><a href="{{ path('front_delete', {'slug':  article.slug }) }}">Supprimer cet article</a></div>
+{% endblock %}

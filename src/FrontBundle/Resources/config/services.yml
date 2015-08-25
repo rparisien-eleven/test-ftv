@@ -1,0 +1,4 @@
+services:
+    client_service:
+        class: FrontBundle\Service\ClientService
+        arguments: [@logger]

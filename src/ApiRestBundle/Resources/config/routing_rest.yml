@@ -1,0 +1,3 @@
+rest_api:
+    type:     rest
+    resource: ApiRestBundle\Controller\ArticleController

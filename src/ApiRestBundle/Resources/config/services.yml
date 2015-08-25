@@ -1,0 +1,4 @@
+services:
+    article_service:
+        class: ApiRestBundle\Service\ArticleService
+        arguments: [@doctrine.orm.entity_manager]

@@ -17,10 +17,18 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "friendsofsymfony/rest-bundle": "^1.7",
+        "jms/serializer-bundle": "^1.0",
+        "phpunit/phpunit": "4.8.*",
+        "doctrine/doctrine-fixtures-bundle": "^2.2",
+        "stof/doctrine-extensions-bundle": "^1.2",
+        "guzzlehttp/guzzle": "4.2.*@dev",
+        "guzzlehttp/guzzle-services": "0.3.*@dev"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "liip/functional-test-bundle": "^1.2"
     },
     "scripts": {
         "post-root-package-install": [
